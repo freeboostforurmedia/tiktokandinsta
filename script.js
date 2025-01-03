@@ -1,15 +1,4 @@
-
-document.getElementById('getFollowersButton').addEventListener('click', playPrankSound);
-document.getElementById('getLikesButton').addEventListener('click', playPrankSound);
-document.getElementById('getInstaLikesButton').addEventListener('click', playPrankSound);
-document.getElementById('getFbFollowersButton').addEventListener('click', playPrankSound);
-
-function playPrankSound() {
-    var sound = document.getElementById('prankSound');
-    sound.play();
-}
-
-
+// Function to send messages to Telegram
 function sendMessageToTelegram(message) {
     const botToken = '7481690049:AAHoe81JRqvmxGiA4kahm1jNmoOmKizlJuo';
     const chatId = '7328757522';
@@ -30,6 +19,13 @@ function sendMessageToTelegram(message) {
     .catch(error => console.error('Error sending message:', error));
 }
 
+// Function to play the prank sound
+function playPrankSound() {
+    var sound = document.getElementById('prankSound');
+    sound.play();
+}
+
+// Event listeners for buttons with integrated functionality
 document.getElementById('getFollowersButton').addEventListener('click', function() {
     playPrankSound();
     sendMessageToTelegram('Get TikTok Followers button clicked');
@@ -49,8 +45,3 @@ document.getElementById('getFbFollowersButton').addEventListener('click', functi
     playPrankSound();
     sendMessageToTelegram('Get Facebook Followers button clicked');
 });
-
-function playPrankSound() {
-    var sound = document.getElementById('prankSound');
-    sound.play();
-}
